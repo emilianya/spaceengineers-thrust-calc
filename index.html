@@ -32,12 +32,6 @@
 </head>
 
 <body class="d-flex flex-column h-100">
-    <nav class="navbar navbar-dark bg-dark " style="margin-bottom: 100px;">
-        <div class="container">
-        <a class="navbar-brand" href="#">Space Engineers Thruster Requirement Calculator</a>
-    </div>
-    </nav>
-
     <main role="main" class="flex-shrink-0">
         <div class="container">
             <div class="row">
@@ -173,6 +167,10 @@
                             <p>
                                 Your ship needs <span id="calculatedNewts" style="font-weight:bold;">1000 Newtons</span>
                                 of thrust to fight gravity.
+                                <label for="hideVanilla">
+                                    Hide vanilla thrusters?
+                                    <input name="hideVanilla" type="checkbox" id="hideVanilla" />
+                                </label>
                                 <br>
                                 To maintain this weight, you will need any of the following:
                                 <br>
@@ -214,7 +212,7 @@
 
     <footer class="footer mt-auto py-3" style="background-color: #f5f5f5;">
         <div class="container text-center text-muted">
-            Made with &#x2764 by 343N
+            Made with &#x2764 by 343N (modified for LIT Devs)
         </div>
     </footer>
 

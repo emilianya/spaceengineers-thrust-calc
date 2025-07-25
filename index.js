@@ -3,6 +3,7 @@ const G = 9.80665
 const platinumWeight = 21.27;
 const oreWeight = 1 / 0.37;
 var cargoContainersEnabled = true
+var showVanilla = true
 
 function initInputHandlers() {
     $('#gravityOptions').children('a').click(gravitySelectEvent);
@@ -22,11 +23,15 @@ function initInputHandlers() {
 
 function shipSizeListener() {
     // cargoContainersEnabled = !cargoContainersEnabled
+    if (isSmallShip()) {
+        initThrusterList(smallShipThrusters);
+    }
     if (isSmallShip() && cargoContainersEnabled) {
         showMediumCargoContainer();
         showModularCargoContainer();
     };
     if (!isSmallShip()) {
+        initThrusterList(largeShipThrusters);
         hideMediumCargoContainer();
         hideModularCargoContainer();
     };
@@ -106,13 +111,16 @@ function parseNewtons(n) {
 
 function updateOutput() {
     $("#calculatedNewts").html(parseNewtons(getShipNewtons()))
+    initThrusterList(isSmallShip() ? smallShipThrusters : largeShipThrusters)
     updateThrusterList();
 }
 
-function initThrusterList(){
-    for (var key in smallShipThrusters){
+function initThrusterList(list){
+    document.getElementById("requirementThrusterList").innerHTML = "";
+    for (var key in list){
         var e = $('<li id=' + key + '" class="list-group-item"></li>');
-        let thruster = smallShipThrusters[key]
+        let thruster = list[key]
+        if (!showVanilla && thruster.vanilla) continue;
         e.text(thruster.name);
         e.html(e.html() + '<span class="float-right" id="' + key + 'Amnt">N/A</span>')
         $('#requirementThrusterList').append(e);
@@ -123,6 +131,7 @@ function updateThrusterList(){
     let thrusterList = (isSmallShip()) ? smallShipThrusters : largeShipThrusters
     for (var key in thrusterList){
         let thruster = thrusterList[key]
+        if (!showVanilla && thruster.vanilla) continue;
         let count = 0
         let shipForce = getShipNewtons()
         let thrusterForce = 0
@@ -167,6 +176,12 @@ function getInputValues() {
             multiplier: Number($('#containerInputVal').val())
         }
     }
+}
+
+function toggleVanilla() {
+    showVanilla = !showVanilla
+    initThrusterList(isSmallShip() ? smallShipThrusters : largeShipThrusters)
+    updateThrusterList()
 }
 
 function toggleCargoContainers() {
@@ -218,9 +233,10 @@ for (var e of $('span.input-group-text'))
 $('#cargoCheckboxLabel').addClass('input-group-text');
 $('#cargoCheckboxSpan').addClass('input-group-text');
 $('#cargoCheckbox').change(toggleCargoContainers)
+$('#hideVanilla').change(toggleVanilla)
 
 initInputHandlers()
-initThrusterList()
+initThrusterList(smallShipThrusters)
 updateOutput()
 
 toggleCargoContainers()

@@ -28,6 +28,7 @@ const smallShipThrusters = {
         thrust: 172800,
         power: 2400,
         fuel: null,
+        vanilla: true,
         imagefile: 'large_ion_thruster.png'
     },
     smallIon: {
@@ -36,6 +37,7 @@ const smallShipThrusters = {
         thrust: 14400,
         power: 200,
         fuel: null,
+        vanilla: true,
         imagefile: 'ion_thruster.png'
     },
     largeHydrogen: {
@@ -44,6 +46,7 @@ const smallShipThrusters = {
         thrust: 480000,
         power: 600,
         fuel: 386,
+        vanilla: true,
         imagefile: 'large_hydrogen_thruster.png'
     },
     smallHydrogen: {
@@ -52,6 +55,7 @@ const smallShipThrusters = {
         thrust: 98400,
         power: 125,
         fuel: 80,
+        vanilla: true,
         imagefile: 'hydrogen_thruster.png'
     },
     largeAtmospheric: {
@@ -60,6 +64,7 @@ const smallShipThrusters = {
         thrust: 576000,
         power: 2400,
         fuel: null,
+        vanilla: true,
         imagefile: 'large_atmospheric_thruster.png'
     },
     smallAtmospheric: {
@@ -68,6 +73,64 @@ const smallShipThrusters = {
         thrust: 96000,
         power: 600,
         fuel: null,
+        vanilla: true,
+        imagefile: 'atmospheric_thruster.png'
+    },
+    prototech: {
+        name: "Prototech Thruster",
+        weight: 1521,
+        thrust: 561600,
+        power: 4800,
+        fuel: null,
+        vanilla: true,
+        imagefile: 'atmospheric_thruster.png'
+    },
+    stribog50: {
+        name: "Stribog-50",
+        weight: 465,
+        thrust: 196800,
+        power: 0,
+        fuel: 152.64,
+        imagefile: 'atmospheric_thruster.png'
+    },
+    stribog100: {
+        name: "Stribog-100",
+        weight: 849,
+        thrust: 393600,
+        power: 0,
+        fuel: 290.01,
+        imagefile: 'atmospheric_thruster.png'
+    },
+    stribog200: {
+        name: "Stribog-200",
+        weight: 1670,
+        thrust: 787200,
+        power: 0,
+        fuel: 732.65,
+        imagefile: 'atmospheric_thruster.png'
+    },
+    stribog300: {
+        name: "Stribog-300",
+        weight: 3055,
+        thrust: 1440000,
+        power: 0,
+        fuel: 1160,
+        imagefile: 'atmospheric_thruster.png'
+    },
+    aeolus100: {
+        name: "Aeolus-100 (Hybrid, 75% in atmo)",
+        weight: 121,
+        thrust: 43200,
+        power: 700000,
+        fuel: 0,
+        imagefile: 'atmospheric_thruster.png'
+    },
+    aeolus300: {
+        name: "Aeolus-300 (Hybrid, 75% in atmo)",
+        weight: 1442,
+        thrust: 518400,
+        power: 8400000,
+        fuel: 0,
         imagefile: 'atmospheric_thruster.png'
     },
 }
@@ -80,6 +143,7 @@ const largeShipThrusters = {
         thrust: 4320000,
         power: 33600,
         fuel: null,
+        vanilla: true,
         imagefile: 'large_ion_thruster.png'
     },
     smallIon: {
@@ -88,6 +152,7 @@ const largeShipThrusters = {
         thrust: 345600,
         power: 3360,
         fuel: null,
+        vanilla: true,
         imagefile: 'ion_thruster.png'
     },
     largeHydrogen: {
@@ -96,6 +161,7 @@ const largeShipThrusters = {
         thrust: 7200000,
         power: 7500,
         fuel: 4820,
+        vanilla: true,
         imagefile: 'large_hydrogen_thruster.png'
     },
     smallHydrogen: {
@@ -104,6 +170,7 @@ const largeShipThrusters = {
         thrust: 1080000,
         power: 1250,
         fuel: 803,
+        vanilla: true,
         imagefile: 'hydrogen_thruster.png'
     },
     largeAtmospheric: {
@@ -112,6 +179,7 @@ const largeShipThrusters = {
         thrust: 6480000,
         power: 16800,
         fuel: null,
+        vanilla: true,
         imagefile: 'large_atmospheric_thruster.png'
     },
     smallAtmospheric: {
@@ -120,8 +188,98 @@ const largeShipThrusters = {
         thrust: 648000,
         power: 2400,
         fuel: null,
+        vanilla: true,
         imagefile: 'atmospheric_thruster.png'
     },
+    prototech: {
+        name: "Prototech Thruster",
+        weight: 38850,
+        thrust: 14040000,
+        power: 67200,
+        fuel: null,
+        vanilla: true,
+        imagefile: 'atmospheric_thruster.png'
+    },
+    stribog350: {
+        name: "Stribog-350",
+        weight: 1790,
+        thrust: 2160000,
+        power: 0,
+        fuel: 1530,
+        imagefile: 'atmospheric_thruster.png'
+    },
+    stribog400: {
+        name: "Stribog-400",
+        weight: 3560,
+        thrust: 4320000,
+        power: 0,
+        fuel: 2900,
+        imagefile: 'atmospheric_thruster.png'
+    },
+    stribog500: {
+        name: "Stribog-500",
+        weight: 7100,
+        thrust: 8640000,
+        power: 0,
+        fuel: 5510,
+        imagefile: 'atmospheric_thruster.png'
+    },
+    stribog550: {
+        name: "Stribog-550",
+        weight: 8696,
+        thrust: 14400000,
+        power: 0,
+        fuel: 9160,
+        imagefile: 'atmospheric_thruster.png'
+    },
+    stribog600: {
+        name: "Stribog-600",
+        weight: 17350,
+        thrust: 28800000,
+        power: 0,
+        fuel: 17400,
+        imagefile: 'atmospheric_thruster.png'
+    },
+    stribog700: {
+        name: "Stribog-700",
+        weight: 34620,
+        thrust: 54000000,
+        power: 0,
+        fuel: 22620,
+        imagefile: 'atmospheric_thruster.png'
+    },
+    stribog800: {
+        name: "Stribog-800",
+        weight: 93350,
+        thrust: 216000000,
+        power: 0,
+        fuel: 29410,
+        imagefile: 'atmospheric_thruster.png'
+    },
+    aeolus400: {
+        name: "Aeolus-400 (Hybrid, 75% in atmo)",
+        weight: 4380,
+        thrust: 1040000,
+        power: 11800000,
+        fuel: 0,
+        imagefile: 'atmospheric_thruster.png'
+    },
+    aeolus500: {
+        name: "Aeolus-500 (Hybrid, 75% in atmo)",
+        weight: 43200,
+        thrust: 12960000,
+        power: 118000000,
+        fuel: 0,
+        imagefile: 'atmospheric_thruster.png'
+    },
+    aeolus700: {
+        name: "Aeolus-700 (Hybrid, 75% in atmo)",
+        weight: 134400,
+        thrust: 45360000,
+        power: 410000000,
+        fuel: 0,
+        imagefile: 'atmospheric_thruster.png'
+    }
 }
 
 const largeShipCargo = {

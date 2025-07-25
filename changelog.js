@@ -48,4 +48,4 @@ function addChanges() {
     $('#changelogModalBody').html(modalBodyHTML)
 }
 
-showChanges()
+//showChanges()
